@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import my.shin.pizzastore_20200607.Data.PizzaStore
 import my.shin.pizzastore_20200607.R
 
-class PizzaAdapter(context: Context, resId: Int, list: List<PizzaStore>) : ArrayAdapter<PizzaStore>(context,resId, list){
+class PizzaStoreAdapter(context: Context, resourceId: Int, list: List<PizzaStore>) : ArrayAdapter<PizzaStore>(context,resourceId, list){
 
     val mContext = context
     val mList = list
@@ -18,20 +18,15 @@ class PizzaAdapter(context: Context, resId: Int, list: List<PizzaStore>) : Array
 
         var tempRow = convertView
 
-        if (tempRow == null) {
+        tempRow?.let {
 
+        }.let {
             tempRow = inf.inflate(R.layout.pizza_store_list, null)
-
         }
 
         val row = tempRow!!
 
-        val data = mList.get(position)
-
-        val
-
-
-
+        return row
 
     }
 }
