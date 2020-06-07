@@ -1,6 +1,7 @@
 package my.shin.pizzastore_20200607
 
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 import my.shin.pizzastore_20200607.Adapter.PizzaStoreAdapter
 import my.shin.pizzastore_20200607.Data.PizzaStore
 
@@ -8,7 +9,7 @@ class MainActivity : BaseActivity() {
 
     val pizzaStoreList = ArrayList<PizzaStore>()
 
-    lateinit var pizzaStoreAdapter: PizzaStoreAdapter
+    lateinit var mPizzaAdapter : PizzaStoreAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,11 @@ class MainActivity : BaseActivity() {
     override fun setValues() {
 //        가게를 직접 추가하는 코드를 따로 모아두고 setValues는 실행만 시킨다.
         addStores()
+//      리스트뷰에 목록을 뿌려주는 역할을 담당할 어댑터를 생성
+        mPizzaAdapter = PizzaStoreAdapter(mContext,R.layout.pizza_store_list,pizzaStoreList)
+
+//        만들어낸 어댑터를 실제 리스트뷰의 어댑터로 지정.
+        pizzaStoreListView.adapter = mPizzaAdapter
 
     }
 
