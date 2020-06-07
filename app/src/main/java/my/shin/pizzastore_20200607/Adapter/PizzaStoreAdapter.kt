@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import my.shin.pizzastore_20200607.Data.PizzaStore
 import my.shin.pizzastore_20200607.R
 
@@ -41,6 +42,9 @@ class PizzaStoreAdapter(context: Context, resourceId: Int, list: List<PizzaStore
 
 //        data안에 있는 가게이름을 => storeNameTxt의 글자로 설정
         storeNameTxt.text = data.name
+
+//        data 안에 있는 Logouri를 이용해서 => 이미지를 웹에서 다운받아서서 => LogImg에 뿌려주기
+        Glide.with(mContext).load(data.logoUrI).into(logoImg)
 
         return row
 
