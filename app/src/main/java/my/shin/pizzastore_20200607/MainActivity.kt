@@ -19,7 +19,19 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+//            눌린가게가 어디인지 position이용해서 추출
+            val clickedStore = pizzaStoreList[position]
+
+//            가게 상세 조회 화면으로 이동
+
+
+
+        }
     }
+
+
 
     override fun setValues() {
 //        가게를 직접 추가하는 코드를 따로 모아두고 setValues는 실행만 시킨다.
